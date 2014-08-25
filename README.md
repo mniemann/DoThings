@@ -1,7 +1,7 @@
 DoThings
 ========
 
-A simple task manager
+A simple task manager for Firefox OS.
 
 
 DoThings helps you get your stuff done in a timely fashion. It doesn't
