@@ -1,0 +1,22 @@
+{
+  "name": "DoThings",
+  "version": "1.0",
+  "description": "Manage your tasks in a timely fashion.",
+  "launch_path": "/index.html",
+  "icons": {
+    "60": "/icons/icon-60.png",
+    "128": "/icons/icon-128.png"
+  },
+  "developer": {
+    "name": "Michael Niemann",
+    "url": "http://michael-niemann.com/apps"
+  },
+  "permissions": {
+    "storage": {
+      "description": "Required to store and retrieve todo items."
+    }
+  },
+  "default_locale": "en",
+  "fullscreen": "true",
+  "orientation":"portrait"
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset = "utf-8">
+  <meta http-equiv = "pragma" content = "no-cache">
+  <meta http-equiv = "cache-control" content = "no-cache">
+  <link href="css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="css/brick-1.0.1.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src = "js/brick-1.0.1.js"></script>
+  <script type="text/javascript" src = "js/model.js"></script>
+  <title>DoThings</title>
+</head>
+
+<body class="application">
+  <!-- main page for the app -->
+  <section role="region" id="todo-list">
+    <!-- text entry for new todos -->
+    <div id="textEntry" class="hidden">
+      <input id="todoText" type="text" placeholder="I want too ..." />
+      <span id="when"></span>
+      <span id="todoAdd">+</span>
+    </div>
+    <!-- div to display and select the due date -->
+    <div id="dateDisplay" class="hidden">
+      <span id="curDateDisplay"></span>
+    </div>
+    <!-- popup calendar to select due date -->
+    <div id="dateSelection" class="hidden">
+      <x-calendar controls></x-calendar>
+    </div>
+    <!-- main area for todos today, tomorrow, later -->
+    <div id="today">
+      <span id="todayshow">Now</span><span id="todayAdd">+</span>
+    </div>
+    <div id="todo-today">
+      <ul id="todayList">
+      </ul>
+    </div>
+    <div id="tomorrow">
+      <span id="tomorrowshow">Soon</span><span id="tomorrowAdd">+</span>
+    </div>
+    <div id="todo-tomorrow">
+      <ul id="tomorrowList">
+      </ul>
+    </div>
+    <div id="later">
+      <span id="latershow">Later</span><span id="laterAdd">+</span>
+    </div>
+    <div id="todo-later">
+      <ul id="laterList">
+      </ul>
+    </div>
+    <!-- this is the footer section with the help menu and the folder menu -->
+    <div id="footerMain">
+    <span id="help">?</span>
+    </div>
+  </section>
+  <!-- help screen -->
+  <aside id="helpScreen">
+    <p>DoThings helps you get your stuff done in a timely fashion. It doesn't nag you. It assumes you are an adult.</p>
+    <p>Here's how to use it:</p>
+    <p>Tap on "Now," "Soon," or "Later" to see what you were planning on doing.</p>
+    <p>Tap any "+" sign on the right of the screen to add a new item. Tap the calendar icon to select a different date than the default. To cancel, just tap "Now," "Soon," or "Later" again.</p>
+    <p>Tap any uncompleted item to edit it. Change the text and/or the date</p>
+    <p>To mark an item completed, right swipe across it. A left swipe will restore the item. Once an item has been marked completed, a single tap will delete the item.</p>
+  </aside>
+  <script type="text/javascript" src = "js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+@font-face
+{
+  font-family: firaLight;
+  src: url(../fonts/FiraSans-Light.otf);
+}
+
+@media (min-width: 320px) and (orientation: portrait) {
+
+  #todayshow, #tomorrowshow, #latershow {
+    font-size: 2.2rem;
+  }
+
+  li {
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+  }
+
+  #todayAdd, #tomorrowAdd, #laterAdd {
+    font-family:firaLight;
+    font-size: 2.6rem;
+    position: fixed;
+    right: 1.3rem;
+  }
+
+  #todoAdd {
+    font-family:firaLight;
+    font-size: 2.6rem;
+    position: fixed;
+    top: 3rem;
+    right: 1.2rem;
+   }
+  #todoText {
+    border: none;
+    border-bottom: solid gray 1px;
+    font-family: firaLight;
+    font-size: 1.4rem;
+    width: 70%;
+  }
+  body {padding: 10px;}
+
+  #when {
+    position: fixed;
+    right: 3.1rem;
+    width: 30px;
+    height: 36px;
+    background-image: url("../icons/calendarIcon.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+  #dateDisplay {font-size: 1.4rem;}
+  #dateSelection {font-size: 1.4rem;}
+
+  #help {
+    position: fixed;
+    font-size: 1.8rem;
+    right: 1.2rem;
+  }
+  #footerMain {
+    position: fixed;
+    bottom: 3rem;
+  }
+  #helpScreen {
+    font-size: 0.8rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #111;
+    color: #fff;
+    position: fixed;
+    width: 310px;
+    top: 0px;
+    left: 320px;
+    right: 0px;
+    bottom: 0px;
+    transition: all 1s;
+  }
+}
+
+@media (min-width: 480px) and (orientation: portrait) {
+
+  #todayshow, #tomorrowshow, #latershow {
+    font-size: 3rem;
+  }
+
+  li {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+  #todayAdd, #tomorrowAdd, #laterAdd {
+    font-family:firaLight;
+    font-size: 3.5rem;
+    line-height: 4rem;
+    position: fixed;
+    right: 2rem;
+  }
+  #todoAdd {
+    font-family:firaLight;
+    font-size: 3.5rem;
+    line-height: 4rem;
+    position: fixed;
+    top: 4.2rem;
+    right: 1.5rem;
+  }
+  #todoText {
+    border: none;
+    border-bottom: solid gray 1px;
+    font-family: firaLight;
+    font-size: 1.8rem;
+    width: 70%;
+  }
+  body {padding: 20px;}
+
+  #when {
+    position: fixed;
+    right: 5rem;
+    width: 50px;
+    height: 60px;
+    background-image: url("../icons/calendarIconx2.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+  #dateDisplay {font-size: 1.6rem;}
+  #dateSelection {font-size: 1.8rem;}
+
+  #now {
+    color: red;
+    position: fixed;
+    font-size: 2.8rem;
+    left: 2rem;
+  }
+  #help {
+    position: fixed;
+    font-size: 3rem;
+    right: 2rem;
+  }
+  #footerMain {
+    position: fixed;
+    bottom: 4.3rem;
+  }
+  #helpScreen {
+    font-size: 1.4rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #111;
+    color: #fff;
+    position: fixed;
+    width: 470px;
+    top: 0px;
+    left: 480px;
+    right: 0px;
+    bottom: 0px;
+    transition: all 1s;
+  }
+}
+
+/* main css */
+html {
+  min-height: 100%;
+}
+
+body {
+  font-family:firaLight;
+  background: white;
+  margin-top: 3rem;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
+.hidden {display: none;}
+
+.done {text-decoration: line-through; opacity: 0.7;}
+
+#today, #todayshow, #todayAdd, #todoAdd, #todayList {
+  color: black;
+  text-decoration: none;
+}
+
+#tomorrow, #tomorrowshow, #tomorrowAdd, #tomorrowList {
+  color:#444;
+  text-decoration: none;
+}
+
+#later, #latershow, #laterAdd, #laterList {
+  color: #888;
+  text-decoration: none;
+}
+
+#todayshow, #tomorrowshow, #latershow, #todayAdd, #tomorrowAdd, #laterAdd {
+  font-family:firaLight;
+}
