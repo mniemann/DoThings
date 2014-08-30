@@ -6,7 +6,20 @@ var todayView, tomorrowView, laterView, todayViewList, tomorrowViewList, laterVi
 var todayAddButton, tomorrowAddButton, laterAddButton, todoStage, todoCal, textForm;
 var helpView, notify, editFlag, editTodoId;
 
-
+function setupLanguage() {
+  var languageCode = window.navigator.language;
+  if (languageCode == "de") {
+    days = ["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"];
+    document.getElementById("todoText").setAttribute("placeholder", "Ich möchte...");
+  }
+  else if (languageCode == "fr"){
+    days = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+    document.getElementById("todoText").setAttribute("placeholder", "Je veux...");
+  }
+  else if (languageCode == "en-US") {
+    days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  }
+}
 
 // get the touch starting point
 function handleTouchStart(event) {
@@ -73,7 +86,6 @@ function handleTouchEnd(event) {
       var request = objectStore.get(todoId);
       request.onsuccess = function() {
         event.target.classList.add("done");
-        console.log(request.result);
         var todo = request.result;
         todo.done = "yes";
         var requestUpdate = objectStore.put(todo);
@@ -378,6 +390,11 @@ function refreshTodoList() {
   }
 }
 
+function handleVisibilityChange () {
+  if (!document.hidden) {
+    document.location.reload(true);
+  }
+}
 //this starts the whole program
 window.onload = function() {
   //create views of the titles
@@ -441,11 +458,13 @@ window.onload = function() {
 
 //get the show started
   editFlag = 0;
+  document.addEventListener("visibilitychange", handleVisibilityChange);
+  setupLanguage();
   refreshTodoList();
-}
+};
 
 //Close database when app quits
 window.onclose = function(){
   showAllLists();
   db.close;
-}
+};
