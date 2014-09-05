@@ -6,21 +6,6 @@ var todayView, tomorrowView, laterView, todayViewList, tomorrowViewList, laterVi
 var todayAddButton, tomorrowAddButton, laterAddButton, todoStage, todoCal, textForm;
 var helpView, notify, editFlag, editTodoId;
 
-function setupLanguage() {
-  var languageCode = window.navigator.language;
-  if (languageCode == "de") {
-    days = ["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"];
-    document.getElementById("todoText").setAttribute("placeholder", "Ich möchte...");
-  }
-  else if (languageCode == "fr"){
-    days = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
-    document.getElementById("todoText").setAttribute("placeholder", "Je veux...");
-  }
-  else if (languageCode == "en-US") {
-    days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-  }
-}
-
 // get the touch starting point
 function handleTouchStart(event) {
   var touches = event.changedTouches[0];
@@ -183,6 +168,7 @@ function addToday() {
   laterView.classList.add("hidden");
   todayViewList.classList.add("hidden");
   todayAddButton.classList.add("hidden");
+  helpIcon.classList.add("hidden");
   if (textForm.classList.contains("hidden")) {
     textForm.classList.remove("hidden");
   }
@@ -309,6 +295,7 @@ function showAllLists() {
 
 function showHelp() {
   var showScreen = document.getElementById("helpScreen");
+  showScreen.classList.remove("hidden");
   showScreen.style.left = "0px";
 }
 
@@ -316,6 +303,7 @@ function hideHelp() {
   //  helpView.classList.add("hidden");
   var showScreen = document.getElementById("helpScreen");
   showScreen.style.left = window.innerWidth.toString() + "px";
+  showScreen.classList.add("hidden");
 }
 
 // the refreshTodoList function populates the lists when the app starts and updates
@@ -395,6 +383,7 @@ function handleVisibilityChange () {
     document.location.reload(true);
   }
 }
+
 //this starts the whole program
 window.onload = function() {
   //create views of the titles
@@ -427,6 +416,7 @@ window.onload = function() {
 
   //the help screen
   helpView = document.getElementById("helpScreen");
+  helpIcon = document.getElementById("help");
 
   //hiding all the lists for start up
   todayViewList.classList.add("hidden");
@@ -452,14 +442,13 @@ window.onload = function() {
 
   //event listeners for help screen and the plan you day screen
 //  document.getElementById("now").addEventListener("click", planDay);
-  document.getElementById("help").addEventListener("click", showHelp);
-  document.getElementById("helpScreen").addEventListener("click", hideHelp);
+  helpIcon.addEventListener("click", showHelp);
+  helpView.addEventListener("click", hideHelp);
 
 
 //get the show started
   editFlag = 0;
   document.addEventListener("visibilitychange", handleVisibilityChange);
-  setupLanguage();
   refreshTodoList();
 };
 

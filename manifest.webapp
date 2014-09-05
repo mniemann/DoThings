@@ -17,16 +17,6 @@
     }
   },
   "default_locale": "en",
-  "locales": {
-    "de": {
-      "name": "DoThings",
-      "description": "Bewältige Deine Aufgaben zeitgemäß."
-    },
-    "fr": {
-      "name": "DoThings",
-      "description": "Gérer votre tâches juste à temps."
-    }
-  },
   "fullscreen": "true",
   "orientation":"portrait"
 }
